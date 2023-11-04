@@ -1,4 +1,4 @@
-package pbo.UTS;
+package pbo.uts;
 
 public class Rallycar extends Kendaraan implements Maps{
     private String jenisKemudi;

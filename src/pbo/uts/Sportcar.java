@@ -1,4 +1,4 @@
-package pbo.UTS;
+package pbo.uts;
 
 public class Sportcar extends Kendaraan implements Maps{
     private String jenisKemudi;

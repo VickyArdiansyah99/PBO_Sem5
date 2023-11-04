@@ -1,4 +1,4 @@
-package pbo.UTS;
+package pbo.uts;
 
 public class Motocross extends MotorBike{
     public String jenisTransmisi;

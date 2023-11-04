@@ -1,4 +1,4 @@
-package pbo.UTS;
+package pbo.uts;
 
 public class Main {
     public static void main(String[] args) {
