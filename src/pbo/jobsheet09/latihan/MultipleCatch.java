@@ -6,8 +6,8 @@ public class MultipleCatch {
         System.out.println("\n***** MENGGUNAKAN MULTIPLE CATCH *****\n");
         try {
             int[] array = new int[9]; // deklarasi array berukuran 9 buah elemen
-            array[9] = 13; //penyebab exception
-            System.out.println("Elemen array indeks ke 9 adalah " + array[9]);
+            array[8] = 13; //penyebab exception
+            System.out.println("Elemen array indeks ke 8 adalah " + array[8]);
             System.out.println("Pernyataan dalam blok try setelah bebas dari exception.");
         } catch (ArrayIndexOutOfBoundsException exc) {
             System.err.println("Anda mengakses array di luar indeks yang dideklarasiakan.");

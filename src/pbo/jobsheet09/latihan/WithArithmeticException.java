@@ -5,7 +5,7 @@ public class WithArithmeticException {
     public static void main(String[] args) {
         System.out.println("\n* PROGRAM DENGAN EXCEPTION HANDLING *\n");
         try {
-            int hasil = 9 / 0; //penyebab exception
+            int hasil = 8 / 2; //penyebab exception
             System.out.println("Hasil pembagian = " + hasil);
             System.out.println("Pernyataan dalam blok try");
         } catch (ArithmeticException exc) {

@@ -5,11 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginFrame extends JFrame {
+public class LoginSystem extends JFrame {
     private JTextField usernameField;
     private JPasswordField passwordField;
 
-    public LoginFrame() {
+    public LoginSystem() {
         setTitle("Login System");
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,7 +47,7 @@ public class LoginFrame extends JFrame {
         String pass = "1234";
 
         try {
-            if (username.equals(user) && password.equals(pass)) {
+            if (isValidCredential(username, password, user, pass)) {
                 JOptionPane.showMessageDialog(this, "Login berhasil!");
             } else {
                 throw new IllegalArgumentException("Username atau Password tidak valid");
@@ -57,8 +57,19 @@ public class LoginFrame extends JFrame {
             JOptionPane.showMessageDialog(this, "Login Gagal. " + e.getMessage());
         }
     }
+    private boolean isValidCredential(String username, String password, String user, String pass) {
+        // Validasi sesuai ketentuan
+        boolean validUsername = isValidString(username);
+        boolean validPassword = isValidString(password);
+
+        return validUsername && validPassword && username.equals(user) && password.equals(pass);
+    }
+
+    private boolean isValidString(String input) {
+        return input.matches("[a-zA-Z0-9]+");
+    }
 
     public static void main(String[] args) {
-        LoginFrame frame = new LoginFrame();
+        LoginSystem frame = new LoginSystem();
     }
 }
