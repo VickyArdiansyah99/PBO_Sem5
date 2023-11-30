@@ -10,9 +10,9 @@ public class MahasiswaManager implements Serializable {
     public MahasiswaManager() {
         this.daftarMahasiswa = new ArrayList<>();
     }
-    public void simpanMahasiswa(Mahasiswa mahasiswa) {
-        daftarMahasiswa.add(mahasiswa);
-    }
+//    public void simpanMahasiswa(Mahasiswa mahasiswa) {
+//        daftarMahasiswa.add(mahasiswa);
+//    }
     public void updateMahasiswa(int index, Mahasiswa mahasiswa) {
         if (index >= 0 && index < daftarMahasiswa.size()) {
             daftarMahasiswa.set(index, mahasiswa);
@@ -23,9 +23,9 @@ public class MahasiswaManager implements Serializable {
             daftarMahasiswa.remove(index);
         }
     }
-    public void clearMahasiswa() {
-        daftarMahasiswa.clear();
-    }
+//    public void clearMahasiswa() {
+//        daftarMahasiswa.clear();
+//    }
     public ArrayList<Mahasiswa> getDaftarMahasiswa() {
         return daftarMahasiswa;
     }
@@ -34,16 +34,16 @@ public class MahasiswaManager implements Serializable {
             oos.writeObject(daftarMahasiswa);
             System.out.println("Data mahasiswa berhasil disimpan.");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Gagal menyimpan data mahasiswa: " + e.getMessage());
         }
     }
     @SuppressWarnings("unchecked")
     public void muatDariFile() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("mahasiswa.dat"))) {
             daftarMahasiswa = (ArrayList<Mahasiswa>) ois.readObject();
-            System.out.println("Data mahasiswa berhasil dimuat.");
+            System.out.println("Data mahasiswa berhasil dimuat. Jumlah data: " + daftarMahasiswa.size());
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("Gagal memuat data mahasiswa: " + e.getMessage());
         }
     }
 }
